@@ -1,0 +1,95 @@
+{% extends 'base_cand_interfaces.html.twig' %}
+
+
+
+    {% block title %}Seance index{% endblock %}
+
+
+    {% block body %}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+
+{# <logo> #}
+<div class="my-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12"><img class="img-fluid d-block rounded-circle w-25 mx-auto" src="../../images/logo-trabsparente.png" style=""></div>
+        </div>
+    </div>
+</div>
+{# </logo>#}
+
+{# <Interface Title>#}
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 py-3">
+                <h3 class="display-3 text-center text-capitalize" style="">Seance List</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{# </Interface Title>#}
+
+{# <Search area>#}
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="text-right col-md-12" align="right">
+                <form class="form-inline" align="right">
+                    <div class="input-group" align="right">
+                        <input type="text" class="form-control form-control-lg" id="inlineFormInputGroup" placeholder="Search" align="right">
+                        <div class="input-group-append" align="right"><button class="btn btn-primary" type="button" align="right"><i class="fa fa-search"></i></button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{# </Search area>#}
+
+{# <table>#}
+<div class="py-3" style="">
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive" style="">
+                <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Designation</th>
+                <th>Duree</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for seance in seances %}
+            <tr>
+                <td>{{ seance.id }}</td>
+                <td>{{ seance.designation }}</td>
+                <td>{{ seance.duree }}</td>
+                <td>
+                    <a href="{{ path('seance_show', {'id': seance.id}) }}">show</a>
+                    <a href="{{ path('seance_edit', {'id': seance.id}) }}">edit</a>
+                    <a href="{{ path('seance_delete', {'id': seance.id}) }}">Delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <a href="{{ path('seance_new') }}">Create new</a>
+</html>
+{% endblock %}

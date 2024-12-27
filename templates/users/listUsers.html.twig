@@ -1,0 +1,23 @@
+<h1>Liste des utilisateurs</h1>
+<table border="1">
+    <tr>
+        <td>id</td>
+        <td>password</td>
+        <td>phonenumber</td>
+        <td>email</td>
+        <td>adress</td>
+        <td>role</td>
+    </tr>
+    {% for l in listUsers %}
+    <tr>
+        <td>{{ l.id }}</td>
+        <td>{{ l.password }}</td>
+        <td>{{ l.phonenumber }}</td>
+        <td>{{ l.email }}</td>
+        <td>{{ l.adress }}</td>
+        <td>{{ l.role }}</td>
+       {  <td><a href=" {{ path("userDelete", {'id': l.id})}}">Supprimer</a></td> }
+    </tr>
+    {% endfor %}
+
+</table>

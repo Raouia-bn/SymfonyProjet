@@ -1,0 +1,84 @@
+{% extends 'base_cand_interfaces.html.twig' %}
+
+{% block title %}ReclamationCandFormat index{% endblock %}
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+
+{# <logo> #}
+<div class="my-3">
+    <div class="container">
+
+    </div>
+</div>
+{# </logo>#}
+
+{# <Interface Title>#}
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 py-3">
+                <h3 class="display-3 text-center text-capitalize" style="">Reclamation</h3>
+            </div>
+        </div>
+    </div>
+</div>
+{# </Interface Title>#}
+
+{# <Search area>#}
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="text-right col-md-12" align="right">
+                <form class="form-inline" align="right">
+                    <div class="input-group" align="right">
+                        <input type="text" class="form-control form-control-lg" id="inlineFormInputGroup" placeholder="Search" align="right">
+                        <div class="input-group-append" align="right"><button class="btn btn-primary" type="button" align="right"><i class="fa fa-search"></i></button></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{# </Search area>#}
+
+{# <table>#}
+<div class="py-3" style="">
+    <div class="container">
+        <div class="row">
+            <div class="table-responsive" style="">
+                <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Motif</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reclamation_cand_format in reclamation_cand_formats %}
+            <tr>
+                <td>{{ reclamation_cand_format.id }}</td>
+                <td>{{ reclamation_cand_format.motifReclamation }}</td>
+                <td>{{ reclamation_cand_format.description }}</td>
+                <td>
+                    <a href="{{ path('reclamation_cand_format_show', {'id': reclamation_cand_format.id}) }}" class="btn btn-outline-info">show</a>
+                    <a href="{{ path('reclamation_cand_format_delete', {'id': reclamation_cand_format.id}) }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('reclamation_cand_format_new') }}" class="btn btn-info">Add a Reclamation</a>
+{% endblock %}

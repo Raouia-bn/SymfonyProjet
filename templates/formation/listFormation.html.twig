@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Liste des formations</h1>
+<table border="1">
+    <tr>
+        <td>id</td>
+        <td>Nom de formation</td>
+        <td>Nombre des sessions</td>
+
+    </tr>
+    {% for l in listFormation %}
+        <tr>
+            <td>{{ l.id }}</td>
+            <td>{{ l.nomf }}</td>
+            <td>{{ l.nbsessions }}</td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% block body %}
+    {{ form_start(form) }}
+
+    <div class="container mt-5">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        {{ form_row(form.designation, {'attr': {'class': 'form-control', 'placeholder': 'Enter Designation'}}) }}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        {{ form_row(form.datedeb, {'attr': {'class': 'form-control', 'placeholder': 'Enter Start Date'}}) }}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        {{ form_row(form.datefin, {'attr': {'class': 'form-control', 'placeholder': 'Enter End Date'}}) }}
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        {{ form_row(form.formation, {'attr': {'class': 'form-control', 'placeholder': 'Enter Formation'}}) }}
+                    </div>
+                </div>
+
+                <div class="text-center mt-3">
+                    <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}

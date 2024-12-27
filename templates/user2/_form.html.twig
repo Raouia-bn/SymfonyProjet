@@ -1,0 +1,29 @@
+{% block body %}
+    {{ form_start(form) }}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    {{ form_row(form.email, {'attr': {'class': 'form-control', 'placeholder': 'Email'}}) }}
+                </div>
+                <div class="form-group mb-3">
+                    {{ form_row(form.password.first, {'attr': {'class': 'form-control', 'placeholder': 'Password'}}) }}
+                </div>
+                <div class="form-group mb-3">
+                    {{ form_row(form.password.second, {'attr': {'class': 'form-control', 'placeholder': 'Confirm Password'}}) }}
+                </div>
+                <div class="form-group mb-3">
+                    {{ form_row(form.phonenumber, {'attr': {'class': 'form-control', 'placeholder': 'Phone Number'}}) }}
+                </div>
+                <div class="form-group mb-3">
+                    {{ form_row(form.adress, {'attr': {'class': 'form-control', 'placeholder': 'Address'}}) }}
+                </div>
+                <div class="form-group mb-3">
+                    {{ form_row(form.roles, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <button type="submit" class="btn btn-primary">{{ button_label|default('Save') }}</button>
+            </div>
+        </div>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}

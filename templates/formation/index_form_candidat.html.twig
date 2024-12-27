@@ -1,0 +1,39 @@
+{% extends 'base_cand_interfaces.html.twig' %}
+
+{% block title %}Formation index{% endblock %}
+<html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+<link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+{% block body %}
+    <h1>Formation index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Project Name</th>
+                <th>Interview</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for formation in formations %}
+            <tr>
+                <td>{{ formation.id }}</td>
+                <td>{{ formation.nomf }}</td>
+                <td>{{ formation.nbsessions }}</td>
+                <td><a href="{{ path('formation_show', {'id': formation.id}) }}">Show</a></td>
+                <td><a href="{{ path('inscription_preInscriptions', {'id': formation.id}) }}">inscrire</a></td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</html>
+{% endblock %}

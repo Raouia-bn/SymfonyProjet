@@ -1,0 +1,18 @@
+{% block body %}
+    {{ form_start(form) }}
+
+    <div class="form_group" align="left">
+        <div class="col-md-6 mb-1">
+            {{ form_row(form.nomf, {'attr': {'class': 'form-control '}, 'label': 'NomProject'}) }}
+        </div>
+
+        <div class="col-md-6 mb-1">
+            {{ form_row(form.nbsessions, {'attr': {'class': 'form-control '}, 'label': 'Devis'}) }}
+        </div>
+
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}
+

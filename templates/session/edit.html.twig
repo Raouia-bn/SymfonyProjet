@@ -1,0 +1,13 @@
+{% extends 'base_cand_interfaces.html.twig' %}
+
+{% block title %}Edit Session{% endblock %}
+
+{% block body %}
+    <h1>Edit Interview</h1>
+    <a href="{{ path('session_list_Formateur', {'id': session.formation.id}) }}">back to list</a>
+
+
+    {{ include('session/_form.html.twig', {'button_label': 'Update'}) }}
+
+
+{% endblock %}

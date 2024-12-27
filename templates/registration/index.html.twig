@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+    <title>{% block title %}Sign up!{% endblock %}</title>
+{% endblock %}
+{% block body %}
+
+    <div class="text-center" style="	background-image: url('../../images/v915-wit-002.jpg');	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+      <div class="container">
+    <div class="row" style="">
+    <div class="col-5 mx-auto m-2" style="">
+        <img class="img-fluid d-block rounded-circle w-25 mx-auto" src="https://img.aviationpros.com/files/base/cygnus/cavc/image/2007/07/workbridge_10017964.png?auto=format&fit=max&w=1200">
+        <h1> Welcome to Workbridge </h1>
+
+
+                        {{ form_start(form) }}
+
+                        <div class="form_group " align="left">
+                            <div class="col-md-12 mb-3" >
+                                {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form_group" align="left">
+                            <div class="col-md-6">
+                                {{ form_row(form.password.first, {'attr': {'class':
+                                    'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form_group" align="left">
+                            <div class="col-md-6">
+                                {{ form_row(form.password.second, {'attr': {'class':
+                                    'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form_group" align="left">
+                            <div class="col-md-12 mb-3">
+                                {{ form_row(form.adress, {'attr': {'class':
+                                    'form-control'}}) }}
+                            </div>
+                        </div>
+                        <div class="form_group" align="left">
+                            <div class="col-md-12 mb-3">
+                                {{ form_row(form.phonenumber, {'attr': {'class':
+                                    'form-control'}}) }}
+                            </div>
+
+                        <div class="form-group" align="left">
+                            <div class="form-check"> <input class="form-check-input" type="checkbox" id="form21" value="on"> <label class="form-check-label" for="form21"> I Agree with <a href="#">Term and Conditions</a> of the service </label> </div>
+                        </div>
+
+                        <div class="form-group" align="left">
+                            <div class="col-md-8 col-md-offset-4" style="margin-top:5px;">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-btn fa-user"></i> Register
+                                </button>
+                            </div>
+                        </div>
+
+
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+   {#  <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+    </head>
+
+
+    <div class="text-center" style="	background-image: url(images/v915-wit-002.jpg);	background-position: top left;	background-size: 100%;	background-repeat: repeat;">
+        <div class="container">
+            <div class="row" style="">
+                <div class="col-5 mx-auto m-2" style="">
+                    <img class="img-fluid d-block rounded-circle w-25 mx-auto" src="images/logo-trabsparente.png">
+                    <h1> Welcome to OBBA </h1>
+
+                    <form class="text-left">
+                        {{ form_start(form) }}
+                        <div class="form-group" > {{ form_row(form.email, {'attr': {'class': 'form-control'}}) }} </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6" style=""> {{ form_row(form.password.first, {'attr': {'class':
+                                    'form-control'}}) }}  </div>
+                            <div class="form-group col-md-6"> {{ form_row(form.password.second, {'attr': {'class':
+                                    'form-control'}}) }}</div>
+                        </div>
+                        <div class="form-group"> {{ form_row(form.adress, {'attr': {'class':
+                                'form-control'}}) }}</div>
+                        <div class="form-group"> {{ form_row(form.phonenumber, {'attr': {'class':
+                                'form-control'}}) }}</div>
+                        <div class="form-group">
+                            <div class="form-check"> <input class="form-check-input" type="checkbox" id="form21" value="on"> <label class="form-check-label" for="form21"> I Agree with <a href="#">Term and Conditions</a> of the service </label> </div>
+                        </div>
+                        <div class="col-md-8 col-md-offset-4" style="margin-top:5px;">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fa fa-btn fa-user"></i> Register
+                            </button>
+                        </div>
+                        {{ form_end(form) }}
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+   #}
+
+
+{% endblock %}

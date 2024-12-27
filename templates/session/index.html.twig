@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Session index{% endblock %}
+
+{% block body %}
+    <h1>Session index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Designation</th>
+                <th>Datedeb</th>
+                <th>Datefin</th>
+                <th>Seances</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for session in sessions %}
+            <tr>
+                <td>{{ session.id }}</td>
+                <td>{{ session.designation }}</td>
+                <td>{{ session.datedeb ? session.datedeb|date('Y-m-d') : '' }}</td>
+                <td>{{ session.datefin ? session.datefin|date('Y-m-d') : '' }}</td>
+                <td>
+                    <a href="{{ path('session_show', {'id': session.id}) }}">Show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

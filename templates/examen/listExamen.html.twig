@@ -1,0 +1,16 @@
+<h1>Liste des Examens</h1>
+<table border="1">
+    <tr>
+        <td>id</td>
+        <td>Désignation</td>
+        <td>Durée</td>
+
+    </tr>
+    {% for l in listExamen %}
+        <tr>
+            <td>{{ l.id }}</td>
+            <td>{{ l.designation }}</td>
+            <td>{{ l.datecreation | date }}</td>
+        </tr>
+    {% endfor %}
+</table>

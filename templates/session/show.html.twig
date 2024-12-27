@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Session{% endblock %}
+
+{% block body %}
+    <h1>Session</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ session.id }}</td>
+            </tr>
+            <tr>
+                <th>Designation</th>
+                <td>{{ session.designation }}</td>
+            </tr>
+            <tr>
+                <th>Datedeb</th>
+                <td>{{ session.datedeb ? session.datedeb|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{{ session.datefin ? session.datefin|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('session_formation_list', {'id': session.formation.id}) }}">back to list</a>
+
+{% endblock %}
